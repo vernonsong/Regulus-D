@@ -1,0 +1,67 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 模块继承根项目 -->
+    <parent>
+        <groupId>com.regulus</groupId> <!-- 与根项目的 groupId 保持一致 -->
+        <artifactId>regulus-parent</artifactId> <!-- 根项目的 artifactId -->
+        <version>1.0.0</version> <!-- 根项目的版本号 -->
+        <relativePath>../pom.xml</relativePath> <!-- 指向根项目的路径 -->
+    </parent>
+
+    <artifactId>regulus-inlake</artifactId>
+    <name>regulus-inlake</name>
+    <description>The regulus-inlake module for specific backend features and services.</description>
+
+    <!-- 模块自身的依赖 -->
+    <dependencies>
+        <!-- 使用父 POM 管理的 Spring Boot 核心依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- REST API 支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 数据持久化支持 (Spring Data JPA) -->
+        <!--    <dependency>-->
+        <!--      <groupId>org.springframework.boot</groupId>-->
+        <!--      <artifactId>spring-boot-starter-data-jpa</artifactId>-->
+        <!--    </dependency>-->
+
+        <!-- 数据库驱动：H2（仅供开发和测试使用） -->
+
+
+        <!-- Lombok (简化代码) -->
+        <!--    <dependency>-->
+        <!--      <groupId>org.projectlombok</groupId>-->
+        <!--      <artifactId>lombok</artifactId>-->
+        <!--      <scope>provided</scope>-->
+        <!--    </dependency>-->
+
+        <!-- 测试依赖 -->
+        <!--    <dependency>-->
+        <!--      <groupId>org.springframework.boot</groupId>-->
+        <!--      <artifactId>spring-boot-starter-test</artifactId>-->
+        <!--      <scope>test</scope>-->
+        <!--    </dependency>-->
+    </dependencies>
+
+    <!-- 配置模块的构建行为 -->
+    <build>
+        <plugins>
+            <!-- 使用继承自父项目的 Spring Boot 插件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- 确认是否需要额外配置 Java 编译版本 -->
+        </plugins>
+    </build>
+</project>
