@@ -1,0 +1,21 @@
+extends: [ '@commitlint/config-conventional' ]
+
+rules:
+  # 提交消息的主题必须使用小写字母
+  'subject-case': [ 2, 'always', 'lower-case' ]
+
+  # 提交类型(`feat`, `fix`, 等)必须具备
+  'type-enum': [
+    2,
+    'always',
+    [
+      'feat',  # 新功能
+      'fix',   # 修复 bug
+      'docs',  # 文档改动
+      'style', # 格式调整 (无逻辑改变)
+      'refactor', # 代码重构
+      'test',  # 添加或修改测试
+      'chore'  # 杂务更改
+      'ci'    # ci修改
+    ]
+  ]
